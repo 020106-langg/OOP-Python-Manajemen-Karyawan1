@@ -1,0 +1,69 @@
+# Program Manajemen Karyawan Perusahaan
+
+## Deskripsi
+Aplikasi ini adalah program manajemen data karyawan berbasis OOP (Object Oriented Programming) menggunakan Python. Program ini memungkinkan Anda untuk menambah, menampilkan, mencari, mengupdate, menghapus, menyimpan, dan memuat data karyawan (Manager & Developer) beserta bonusnya.
+
+## Fitur Utama
+- Tambah karyawan (Manager/Developer)
+- Tampilkan semua karyawan
+- Cari karyawan berdasarkan ID
+- Update gaji karyawan
+- Hapus karyawan
+- Statistik jumlah karyawan per departemen
+- Simpan data ke file `data_karyawan.txt`
+- Muat data dari file `data_karyawan.txt`
+- Penanganan error untuk ID karyawan duplikat dan file tidak ditemukan
+
+## Struktur Kelas
+- **Karyawan (abstract class):**  
+  Kelas induk, tidak bisa diinstansiasi langsung. Memiliki method abstrak `hitung_bonus`.
+- **Manager:**  
+  Subclass dari Karyawan, bonus berdasarkan gaji dan jumlah bawahan.
+- **Developer:**  
+  Subclass dari Karyawan, bonus berdasarkan gaji dan bahasa pemrograman.
+- **Perusahaan:**  
+  Menyimpan daftar karyawan dan menyediakan fitur CRUD serta statistik.
+
+## Cara Menjalankan
+1. Pastikan Python sudah terinstall.
+2. Jalankan file berikut di terminal:
+   ```
+   python "uas PBO.py"
+   ```
+3. Ikuti menu yang tersedia di layar.
+
+## Format File Data
+Setiap baris pada `data_karyawan.txt`:
+```
+Jenis,nama,id_karyawan,departemen,gaji,ekstra
+```
+Contoh:
+```
+Developer,oji,1121,ict,120000,c++
+Manager,akbar,1211,ict,150000,3
+```
+
+## Contoh Output
+```
+Daftar Karyawan di PT Pema Global Energi (PGE)
+========================================
+Nama       : oji
+ID         : 1121
+Departemen : ict
+Gaji       : Rp 120,000
+Bonus      : Rp 108,400
+------------------------------
+Nama       : akbar
+ID         : 1211
+Departemen : ict
+Gaji       : Rp 150,000
+Bonus      : Rp 200,000
+------------------------------
+```
+
+## Konsep OOP yang Digunakan
+- **Encapsulation:** Atribut privat, akses melalui getter/setter.
+- **Inheritance:** Pewarisan class Manager & Developer dari Karyawan.
+- **Polymorphism:** Method `hitung_bonus` di-override pada subclass.
+- **Abstraction:** Penggunaan abstract class dan method.
+- **Exception Handling:** Penanganan error duplikat ID dan file tidak

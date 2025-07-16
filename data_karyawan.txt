@@ -1,0 +1,2 @@
+Developer,oji,1121,ict,120000,c++
+Manager,akbar,1211,ict,150000,3
